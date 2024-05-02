@@ -1,0 +1,15 @@
+{
+    "i-language": "&#x1f310;",
+    "i-title": "Tic Tac Toe",
+    "i-qr": "Play it on your phone!",
+    "playerDefault": "Player",
+    "i-player1": "Player 1",
+    "i-player2": "Player 2",
+    "i-player1_placeholder": "Player 1's name...",
+    "i-player2_placeholder": "Player 2's name...",
+    "i-play": "Play",
+    "i-turn": "Turn: <span class='player-color' data-player='X' id='player-turn'>   </span>",
+    "i-win": "<span class='player-color' data-player='X' id='player-won'>  </span> won!",
+    "i-tie": "Tie!",
+    "i-restart": "Restart"
+}

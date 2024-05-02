@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo-dark.png">
+    <link rel="stylesheet" href="./desktop.css" id="style">
+    <script src="https://kit.fontawesome.com/2ca0690881.js" crossorigin="anonymous"></script>
+    <script src="./index.js" defer></script>
+    <style id="pseudo-style"></style>
+    <title class="i-title">loading</title>
+</head>
+<body>
+    <div class="qr">
+        <h2 class="i-qr"></h2>
+        <img src="./ph.png" alt="QR Code">
+    </div>
+    <div class="topbar">
+        <div class="imgs">
+            <a href="./index.html"><img src="./logo-dark.png" alt="Logo Dark"></a>
+            <a href="./index.html" class="hidden-img"><img src="./logo-light.png" alt="Logo Light"></a>
+        </div>
+        <div class="options">
+            <div class="lang-select-wrapper">
+                <select id="lang-select">
+                    <option class="i-language" value="default" selected hidden></option>
+                    <option value="en-us">English (US)</option>
+                    <option value="pt-br">Português (Brasil)</option>
+                </select>
+            </div>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <h1 class="i-title"></h1>
+    </div>
+    <div class="startup">
+        <div class="player-headers">
+            <h2 class="i-player1"></h2>
+            <h2 class="i-player2"></h2>
+        </div>
+        <div class="player-inputs">
+            <div class="player-input">
+                <input class="i-player1_placeholder" type="text" id="player1-name" placeholder="">
+                <div class="char-checkbox-wrapper">
+                    <label class="char-checkbox" for="player1-char">
+                        <input type="checkbox" id="player1-char" checked/>
+                        <div class="char text" data-player="1" data-select="X"></div>
+                    </label>    
+                </div>
+            </div>
+            <div class="player-input">
+                <input class="i-player2_placeholder" type="text" id="player2-name" placeholder="">
+                <div class="char-checkbox-wrapper">
+                    <label class="char-checkbox" for="player2-char">
+                        <input type="checkbox" id="player2-char"/>
+                        <div class="char text" data-player="2" data-select="O"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="button-center">
+            <button id="start" class="i-play"></button>
+        </div>
+    </div>
+    <main id="main">
+        <div class="board-container">
+            <span class="board-item" data-region="TOP-LEFT"></span>
+            <span class="board-item" data-region="TOP-MIDDLE"></span>
+            <span class="board-item" data-region="TOP-RIGHT"></span>
+            <span class="board-item" data-region="MIDDLE-LEFT"></span>
+            <span class="board-item" data-region="MIDDLE-MIDDLE"></span>
+            <span class="board-item" data-region="MIDDLE-RIGHT"></span>
+            <span class="board-item" data-region="BOTTOM-LEFT"></span>
+            <span class="board-item" data-region="BOTTOM-MIDDLE"></span>
+            <span class="board-item" data-region="BOTTOM-RIGHT"></span>
+        </div>
+        <hr>
+        <div class="gameplay-info" id="gameplay-info">
+            <h1 id="score">0-0</h1>
+            <h2 class="i-turn" id="which-player" style="display: inherit;"></h2>
+            <h2 class="i-win" id="won-player" style="display: none;"></h2>
+            <h2 class="i-tie" id="tie-player" style="display: none;"></h2>
+            <div class="button-center">
+                <button class="i-restart" id="restart"></button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.qr {
+    display: none;
+}
+
+.topbar {
+    display: none;
+}
+
+.board-container {
+    display: none;
+}
+.board-container {
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 9em 9em 9em;
+    grid-template-rows: 9em 9em 9em;
+    max-width: 28em;
+}
+.board-container span {
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 10em;
+    user-select: none;
+}
+span[data-player] {
+    color: #000;
+}

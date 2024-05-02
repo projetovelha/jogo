@@ -1,0 +1,340 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700|Ubuntu:400');
+body {
+  font-family: 'Ubuntu';
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Ubuntu';
+  font-weight: 700;
+}
+html {font-size: 100%;} /* 16px */
+h1 {font-size: 4.210rem; /* 67.36px */}
+h2 {font-size: 3.158rem; /* 50.56px */}
+h3 {font-size: 2.369rem; /* 37.92px */}
+h4 {font-size: 1.777rem; /* 28.48px */}
+h5 {font-size: 1.333rem; /* 21.28px */}
+small {font-size: 0.750rem; /* 12px */}
+
+/*Colors*/
+:root[data-theme="light"] {
+    --text: rgb(0, 0, 0);
+    --text-invert: rgb(255, 255, 255);
+    --background: rgb(214, 214, 220);
+    --background-hover: rgb(189, 189, 195);
+    --input-background: rgb(175, 175, 185);
+    --input-background-hover: rgb(150, 150, 160);
+    --placeholder-text: rgb(100, 100, 100);
+    --primary: rgb(0, 95, 163);
+    --primary-hover: rgb(0, 80, 138);
+    --secondary: rgb(22, 16, 101);
+    --accent: rgb(0, 55, 143);
+    --player-x: rgb(200, 55, 78);
+    --player-o: rgb(78, 55, 200);
+    --player-w: rgb(78, 200, 55);
+}
+:root[data-theme="dark"] {
+    --text: rgb(255, 255, 255);
+    --text-invert: rgb(0, 0, 0);
+    --background: rgb(35, 35, 41);
+    --background-hover: rgb(60, 60, 66);
+    --input-background: rgb(75, 75, 85);
+    --input-background-hover: rgb(50, 50, 60);
+    --placeholder-text: rgb(155, 155, 155);
+    --primary: rgb(92, 187, 255);
+    --primary-hover: rgb(77, 162, 255);
+    --secondary: rgb(159, 154, 239);
+    --accent: rgb(112, 167, 255);
+    --player-x: rgb(212, 55, 78);
+    --player-o: rgb(114, 100, 230);
+    --player-w: rgb(114, 230, 100);
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+::selection {
+    background-color: var(--secondary);
+}
+
+.qr {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+} .qr img {
+    width: 300px;
+    background-color: #fff;
+} .qr h2 {
+    position: absolute;
+    bottom: 300px;
+    width: 500px;
+    font-size: 2rem;
+}
+
+.topbar {
+    width: 100%;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} .topbar h1 {
+    font-size: 3.5rem;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+} .topbar img {
+    width: 56px;
+    height: 56px;
+    margin-left: 10px;
+} .topbar .imgs > * {
+    position: absolute;
+    top: 4px;
+    z-index: 2;
+} .topbar .imgs > .hidden-img {
+    top: -64px;
+}
+.topbar label {
+    user-select: none;
+    z-index: 2;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+} .options select {
+    /* Remove dropdown arrow */
+    appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+
+    margin-right: 10px;
+    text-align: center;
+    width: 75px;
+    font-size: 3rem;
+
+    border: none;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.25);
+    outline: none;
+} .options select > * {
+    background-color: var(--primary);
+    color: var(--text-invert);
+    font-size: 1rem;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+} .theme-switch input {
+display:none;
+}
+
+.slider {
+    background-color: var(--primary);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+} .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    width: 26px;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+} .slider.round:before {
+    border-radius: 50%;
+}
+
+.startup {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 64px);
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+} .button-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} .button-center > button {
+    width: 24rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--text-invert);
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    border: none;
+    border-radius: 8px;
+} .button-center > button:hover {
+    background-color: var(--primary-hover);
+}
+
+.player-headers {
+    display: flex;
+    justify-content: space-evenly;
+}
+.player-inputs {
+    display: flex;
+    justify-content: space-evenly;
+}
+.player-input input[type="text"] {
+    background-color: var(--input-background);
+    border-color: transparent;
+    border-radius: 8px;
+    width: 15rem;
+    height: 1.5rem;
+    color: var(--text);
+    outline: none;
+} .player-input input[type="text"]:hover {
+    background-color: var(--input-background-hover);
+} .player-input input[type="text"]::placeholder {
+    font-family: "Ubuntu";
+    color: var(--placeholder-text);
+}
+.char-checkbox-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+.char-checkbox {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 34px;
+} .char-checkbox input {
+    display:none;
+}
+
+.char {
+    background-color: var(--input-background);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+} .char:before {
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: var(--text);
+    position: absolute;
+} .char:hover {
+    background-color: var(--input-background-hover);
+} .char[data-select="X"]::before {
+    content: "X";
+    left: 6px;
+    top: -1px;
+} .char[data-select="O"]::before {
+    content: "O";
+    left: 4.5px;
+    top: -1px;
+}
+.char.text {
+    border-radius: 8px;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+.slideOut {
+    animation: slideOut 1s ease-out 0s 1;
+    position: fixed;
+}
+
+main {
+    margin-top: 50px;
+    filter: blur(5px);
+}
+
+.board-container {
+    display: none;
+}
+.board-container {
+    background-color: var(--primary);
+    display: grid;
+    grid-template-columns: 9em 9em 9em;
+    grid-template-rows: 9em 9em 9em;
+    gap: 0.5em;
+    margin: auto;
+    max-width: 28em;
+}
+.board-container span {
+    font-family: sans-serif;
+    background-color: var(--background);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    font-size: 10em;
+    color: transparent;
+    user-select: none;
+} .board-container span:hover {
+    background-color: var(--background-hover);
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 64px;
+}
+
+.gameplay-info {
+    position: fixed;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(15px);
+}
+.gameplay-info h1, .gameplay-info h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+}
+span[data-player="X"] {
+    color: var(--player-x);
+}
+span[data-player="O"] {
+    color: var(--player-o);
+}
+span[data-player="W"] {
+    color: var(--player-w);
+}
+span[data-player="L"] {
+    color: var(--text);
+}
+
+#restart {
+    margin: 10px;
+}

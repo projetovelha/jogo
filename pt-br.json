@@ -1,0 +1,15 @@
+{
+    "i-language": "&#x1f310;",
+    "i-title": "Jogo da Velha",
+    "i-qr": "Jogue no seu celular!",
+    "playerDefault": "Jogador",
+    "i-player1": "Jogador 1",
+    "i-player2": "Jogador 2",
+    "i-player1_placeholder": "Nome do Jogador 1...",
+    "i-player2_placeholder": "Nome do Jogador 2...",
+    "i-play": "Jogar",
+    "i-turn": "Vez de: <span class='player-color' data-player='X' id='player-turn'>   </span>",
+    "i-win": "<span class='player-color' data-player='X' id='player-won'>  </span> venceu!",
+    "i-tie": "Empate!",
+    "i-restart": "Reiniciar"
+}
