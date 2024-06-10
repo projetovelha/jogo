@@ -41,9 +41,9 @@ document.querySelectorAll(".imgs > a").forEach(e => {if(theme === "light") e.cla
 
 // Load the saved language as startup language
 const langDropdown = document.getElementById("lang-select");
-const lang = localStorage.getItem("language") || "pt-br";
+const lang = localStorage.getItem("language") || "en-us";
 let langItems;
-fetch(`./${lang}.json`)
+fetch(`./lang/${lang}.json`)
     .then(response => response.json())
     .then(data => {
         langItems = data;
@@ -205,7 +205,7 @@ const restart = document.getElementById("restart")
 restart.addEventListener("click", function(e) {
     tiles.forEach((tile) => {
         tile.innerText = "";
-        tile.setAttribute("data-player", "L");
+        tile.setAttribute("data-player", "B");
         playerBoard = [[], []];
         turn = 0;
         gameEnded = false;
@@ -227,3 +227,13 @@ document.addEventListener("keydown", function(e) {
         toggleView(pressedTimes++);
     }
 });
+let held = false;
+document.addEventListener("touchstart", function(e) {
+    held = true;
+    setTimeout(() => {
+        if(held) toggleView(pressedTimes++);
+    }, 500);
+});
+document.addEventListener("touchend", function(e) {
+    held = false;
+})
