@@ -334,6 +334,9 @@ span[data-player="W"] {
 span[data-player="L"] {
     color: var(--text);
 }
+span[data-player="B"] {
+    color: rgba(0, 0, 0, 0);
+}
 
 #restart {
     margin: 10px;
