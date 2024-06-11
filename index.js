@@ -41,7 +41,7 @@ document.querySelectorAll(".imgs > a").forEach(e => {if(theme === "light") e.cla
 
 // Load the saved language as startup language
 const langDropdown = document.getElementById("lang-select");
-const lang = localStorage.getItem("language") || "en-us";
+const lang = "pt-br";
 let langItems;
 fetch(`./lang/${lang}.json`)
     .then(response => response.json())
