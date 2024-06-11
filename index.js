@@ -227,13 +227,3 @@ document.addEventListener("keydown", function(e) {
         toggleView(pressedTimes++);
     }
 });
-let held = false;
-document.addEventListener("touchstart", function(e) {
-    held = true;
-    setTimeout(() => {
-        if(held) toggleView(pressedTimes++);
-    }, 500);
-});
-document.addEventListener("touchend", function(e) {
-    held = false;
-})
