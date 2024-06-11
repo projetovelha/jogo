@@ -40,7 +40,6 @@ toggleSwitch.checked = theme === "light";
 document.querySelectorAll(".imgs > a").forEach(e => {if(theme === "light") e.classList.toggle("hidden-img")})
 
 // Load the saved language as startup language
-const langDropdown = document.getElementById("lang-select");
 const lang = "pt-br";
 let langItems;
 fetch(`./lang/${lang}.json`)
@@ -59,12 +58,6 @@ fetch(`./lang/${lang}.json`)
         };
     })
     .catch(error => console.error(error));
-
-langDropdown.addEventListener("change", function(e) {
-    localStorage.setItem("language", e.target.value);
-    e.target.value = "default";
-    location.reload();
-})
 
 // Load transitions after startup since otherwise it'd work weirdly
 const pseudoStyle = document.getElementById("pseudo-style");
